@@ -11,4 +11,4 @@ WORKDIR /var/spool/smtpd
 
 EXPOSE 25
 
-CMD ["smtpd", "-d", "-P", "mda"]
+ENTRYPOINT ["smtpd", "-d", "-P", "mda"]
