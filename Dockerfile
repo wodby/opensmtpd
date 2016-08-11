@@ -5,10 +5,11 @@ RUN apk add --no-cache openssl ca-certificates opensmtpd
 
 COPY smtpd.conf /etc/smtpd/
 
-RUN mkdir -p /var/spool/smtpd && chmod 711 /var/spool/smtpd
+RUN mkdir -p /var/spool/smtpd
 VOLUME /var/spool/smtpd
 WORKDIR /var/spool/smtpd
 
 EXPOSE 25
 
-ENTRYPOINT ["smtpd", "-d", "-P", "mda"]
+COPY docker-entrypoint.sh /usr/local/bin/
+CMD "docker-entrypoint.sh"
