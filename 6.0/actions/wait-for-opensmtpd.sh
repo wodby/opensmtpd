@@ -19,13 +19,13 @@ for i in $(seq 1 "${max_try}"); do
         started=1
         break
     fi
-    echo 'OpenSMTPd is starting...'
+    echo 'OpenSMTPD is starting...'
     sleep "${wait_seconds}"
 done
 
 if [[ "${started}" -eq '0' ]]; then
-    echo >&2 'Error. OpenSMTPd is unreachable.'
+    echo >&2 'Error. OpenSMTPD is unreachable.'
     exit 1
 fi
 
-echo 'OpenSMTPd has started!'
+echo 'OpenSMTPD has started!'

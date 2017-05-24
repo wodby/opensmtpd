@@ -16,10 +16,10 @@ opensmtpd() {
 	docker run --rm -i --link "${name}" "${image}" "${@}"
 }
 
-echo -n "Waiting for OpenSMTPd to start... "
+echo -n "Waiting for OpenSMTPD to start... "
 opensmtpd make check-ready host="${name}" max_try=10
 echo "OK"
 
-echo -n "Checking OpenSMTPd version... "
+echo -n "Checking OpenSMTPD version... "
 opensmtpd smtpd -h | grep -q "OpenSMTPD 6.0.*"
 echo "OK"

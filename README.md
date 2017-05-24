@@ -1,4 +1,4 @@
-# OpenSMTPd docker container image
+# OpenSMTPD docker container image
 
 [![Build Status](https://travis-ci.org/wodby/opensmptd.svg?branch=master)](https://travis-ci.org/wodby/opensmptd)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmptd.svg)](https://hub.docker.com/r/wodby/opensmptd)
@@ -27,4 +27,4 @@ default params values:
 
 ## Using in production
 
-Deploy OpenSMTPd to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com).
+Deploy OpenSMTPD to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com).
