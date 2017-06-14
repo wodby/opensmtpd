@@ -9,6 +9,17 @@
 
 - [`6.0`, `latest` (*6.0/Dockerfile*)](https://github.com/wodby/opensmptd/tree/master/6.0/Dockerfile)
 
+## Environment variables available for customization
+
+| Environment Variable | Default Value | Description |
+| -------------------- | ------------- | ----------- |
+| OPENSMTPD_BOUNCE_WARN      | 1h, 6h, 2d | |
+| OPENSMTPD_EXPIRE           | 4d         | |
+| OPENSMTPD_MAX_MESSAGE_SIZE | 35M        | |
+| SENDGRID_USERNAME          |            | |
+| SENDGRID_PASSWORD          |            | |
+| SENDGRID_PORT              | 587        | |
+
 ## Actions
 
 Usage:
@@ -25,6 +36,6 @@ default params values:
     delay_seconds 0
 ```
 
-## Using in production
+## Deployment
 
 Deploy OpenSMTPD to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com).
