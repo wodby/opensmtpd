@@ -1,5 +1,6 @@
 FROM alpine:3.6
 
+ENV OPENSMTPD_VER 6.0.2p1-r2
 ENV GOTLP_VER 0.1.5
 ENV GOTPL_URL https://github.com/wodby/gotpl/releases/download/${GOTLP_VER}/gotpl-alpine-linux-amd64-${GOTLP_VER}.tar.gz
 
@@ -9,7 +10,7 @@ RUN apk add --no-cache \
         curl \
         libressl \
         make \
-        opensmtpd \
+        opensmtpd=${OPENSMTPD_VER} \
         wget && \
 
     wget -qO- ${GOTPL_URL} | tar xz -C /usr/local/bin && \
