@@ -21,6 +21,9 @@ opensmtpd make check-ready host="${name}" max_try=10
 echo "OK"
 
 echo -n "Checking OpenSMTPD version... "
-# Ignore exit code 1.
-! opensmtpd smtpd -h | grep -q "OpenSMTPD 6.0.*"
+opensmtpd smtpd -h 2>&1 | grep -q "OpenSMTPD 6.0.*"
+echo "OK"
+
+echo -n "Validating OpenSMTPD config... "
+opensmtpd smtpd -n 2>&1 | grep -q "configuration OK"
 echo "OK"

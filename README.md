@@ -16,9 +16,10 @@
 | OPENSMTPD_BOUNCE_WARN      | 1h, 6h, 2d | |
 | OPENSMTPD_EXPIRE           | 4d         | |
 | OPENSMTPD_MAX_MESSAGE_SIZE | 35M        | |
-| SENDGRID_USERNAME          |            | |
-| SENDGRID_PASSWORD          |            | |
-| SENDGRID_PORT              | 587        | |
+| RELAY_HOST                 |            | |
+| RELAY_USER                 |            | |
+| RELAY_PASSWORD             |            | |
+| RELAY_PORT                 | 587        | |
 
 ## Actions
 

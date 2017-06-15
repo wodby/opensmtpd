@@ -10,8 +10,9 @@ chmod 711 /var/spool/smtpd
 
 gotpl "/etc/gotpl/smtpd.conf.tpl" > "/etc/smtpd/smtpd.conf"
 
-if [[ -n "${SENDGRID_USERNAME}" && -n "${SENDGRID_PASSWORD}" ]]; then
-    echo "${SENDGRID_USERNAME} ${SENDGRID_PASSWORD}" > /etc/smtpd/authinfo
+if [[ -n "${RELAY_USER}" && -n "${RELAY_PASSWORD}" ]]; then
+    echo "user ${RELAY_USER}:${RELAY_PASSWORD}" > /etc/smtpd/authinfo
+    makemap /etc/smtpd/authinfo
 fi
 
 if [[ "${1}" == 'make' ]]; then
