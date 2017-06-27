@@ -1,8 +1,8 @@
 # OpenSMTPD docker container image
 
 [![Build Status](https://travis-ci.org/wodby/opensmptd.svg?branch=master)](https://travis-ci.org/wodby/opensmptd)
-[![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmptd.svg)](https://hub.docker.com/r/wodby/opensmptd)
-[![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmptd.svg)](https://hub.docker.com/r/wodby/opensmptd)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmtpd-alpine.svg)](https://hub.docker.com/r/wodby/opensmtpd-alpine)
+[![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd-alpine.svg)](https://hub.docker.com/r/wodby/opensmtpd-alpine)
 [![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
 
 ## Supported tags and respective `Dockerfile` links
