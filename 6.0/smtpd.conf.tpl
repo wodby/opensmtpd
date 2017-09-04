@@ -22,8 +22,12 @@ max-message-size {{ getenv "OPENSMTPD_MAX_MESSAGE_SIZE" "35M" }}
 # is to reject the message.
 
 {{ if getenv "RELAY_HOST" }}
+{{ if getenv "RELAY_USER" }}
 table authinfo db:/etc/smtpd/authinfo.db
 accept from any for any relay via "tls+auth://user@{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}" auth <authinfo>
+{{ else }}
+accept from any for any relay via "tls://{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
+{{ end }}
 {{ else }}
 accept from any for any relay
 {{ end }}
