@@ -15,7 +15,8 @@ delay_seconds=$4
 sleep "${delay_seconds}"
 
 for i in $(seq 1 "${max_try}"); do
-    if curl -s "${host}:25" &> /dev/null; then
+    # Response code 220 Service ready
+    if { echo "quit"; sleep 1; } | telnet "${host}" 25 | grep -q 220 &> /dev/null; then
         started=1
         break
     fi
