@@ -7,12 +7,12 @@ services:
 
 env:
   global:
-    - LATEST_VERSION=6.0
+    - LATEST_OPENSMTPD_VER=6.0.2
   matrix:
-    - VERSION=6.0
+    - LINE=6 OPENSMTPD_VER=6.0.2
 
 script:
-  - cd ./$VERSION
+  - cd ./$LINE
   - make && make test
 
 after_success: |
@@ -21,10 +21,10 @@ after_success: |
     make release
 
     if [ -n "$TRAVIS_TAG" ]; then
-      make VERSION="$VERSION-$TRAVIS_TAG" release
+      make TAG="$OPENSMTPD_VER-$TRAVIS_TAG" release
     fi
 
-    if [ "$VERSION" == "$LATEST_VERSION" ]; then
-      make VERSION=latest release
+    if [ "$OPENSMTPD_VER" == "$LATEST_OPENSMTPD_VER" ]; then
+      make TAG=latest release
     fi
   fi
