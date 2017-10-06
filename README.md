@@ -7,13 +7,16 @@
 
 ## Docker Images
 
-Images are based on [wodby/alpine](https://github.com/wodby/alpine), built via [Travis CI](https://travis-ci.org/wodby/opensmtpd) and published on [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd). 
+* All images are based on Alpine Linux
+* Base image: [wodby/alpine](https://github.com/wodby/alpine)
+* [Travis CI builds](https://travis-ci.org/wodby/opensmtpd) 
+* [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd)
 
-## Versions
+For better reliability we release images with stability tags (`wodby/opensmtpd:6.0.2-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
 
-| Image tag (Dockerfile)                                               | OpenSMPTD | Alpine Linux |
-| -------------------------------------------------------------------- | --------- | ------------ |
-| [6.0.2](https://github.com/wodby/opensmtpd/tree/master/6/Dockerfile) | 6.0.2     | 3.6          |
+| Image tag (Dockerfile)                                                        | OpenSMPTD | Alpine |
+| ----------------------------------------------------------------------------- | --------- | ------ |
+| [6.0.2 (latest)](https://github.com/wodby/opensmtpd/tree/master/6/Dockerfile) | 6.0.2     | 3.6    |
 
 ## Environment Variables
 
