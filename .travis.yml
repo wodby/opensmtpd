@@ -1,4 +1,4 @@
-language: python
+language: bash
 
 sudo: required
 
@@ -21,9 +21,7 @@ after_success: |
 
     if [[ -n "${TRAVIS_TAG}" ]]; then
       make release TAG="${OPENSMTPD_VER}-${TRAVIS_TAG}"
-    fi
-
-    if [[ "${OPENSMTPD_VER}" == "${LATEST_OPENSMTPD_VER}" ]]; then
+    elif [[ "${OPENSMTPD_VER}" == "${LATEST_OPENSMTPD_VER}" ]]; then
       make release TAG="latest"
     fi
   fi
