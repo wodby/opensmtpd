@@ -10,8 +10,13 @@ chmod 711 /var/spool/smtpd
 
 gotpl "/etc/gotpl/smtpd.conf.tpl" > "/etc/smtpd/smtpd.conf"
 
-if [[ -n "${RELAY_USER}" && -n "${RELAY_PASSWORD}" ]]; then
-    echo "user ${RELAY_USER}:${RELAY_PASSWORD}" > /etc/smtpd/authinfo
+if [[ -n "${RELAY_USER}" ]]; then
+    if [[ -n "${RELAY_PASSWORD}" ]]; then
+        echo "user ${RELAY_USER}:${RELAY_PASSWORD}" > /etc/smtpd/authinfo
+    else
+        echo "user ${RELAY_USER}" > /etc/smtpd/authinfo
+    fi
+
     makemap /etc/smtpd/authinfo
 fi
 
