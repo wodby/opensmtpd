@@ -4,7 +4,7 @@ host ?= localhost
 max_try ?= 1
 wait_seconds ?= 1
 delay_seconds ?= 0
-command = { echo 'quit'; sleep 1; } | telnet ${host} 25 | grep -q 220 &> /dev/null
+command = nc -z ${host} 25
 service = OpenSMPTD
 
 default: check-ready
