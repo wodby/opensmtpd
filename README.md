@@ -14,9 +14,9 @@
 
 For better reliability we release images with stability tags (`wodby/opensmtpd:6.0.2-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
 
-| Image tag (Dockerfile)                                                        | OpenSMPTD | Alpine |
-| ----------------------------------------------------------------------------- | --------- | ------ |
-| [6.0.2 (latest)](https://github.com/wodby/opensmtpd/tree/master/6/Dockerfile) | 6.0.2     | 3.6    |
+Supported tags and respective `Dockerfile` links:
+
+* `6`, `6.0`, `6.0.2`, `latest` [Dockerfile](https://github.com/wodby/opensmtpd/tree/master/6/Dockerfile)
 
 ## Environment Variables
 

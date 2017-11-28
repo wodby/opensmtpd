@@ -7,9 +7,9 @@ services:
 
 env:
   global:
-    - LATEST_OPENSMTPD_VER=6.0.2
+    - LATEST_VER=6.0
   matrix:
-    - OPENSMTPD_VER=6.0.2
+    - OPENSMTPD_VER=6.0.2 MINOR_VER=6.0 MAJOR_VER=6
 
 script:
   - make && make test
@@ -17,11 +17,20 @@ script:
 after_success: |
   if [[ "${TRAVIS_PULL_REQUEST}" == "false" && ("${TRAVIS_BRANCH}" == "master"  || -n "${TRAVIS_TAG}") ]]; then
     docker login -u "${DOCKER_USERNAME}" -p "${DOCKER_PASSWORD}"
+
     make release
+    make release TAG="${MINOR_VER}"
+
+    [[ -n "${MAJOR_VER}" ]] && make release TAG="${MAJOR_VER}"
 
     if [[ -n "${TRAVIS_TAG}" ]]; then
       make release TAG="${OPENSMTPD_VER}-${TRAVIS_TAG}"
-    elif [[ "${OPENSMTPD_VER}" == "${LATEST_OPENSMTPD_VER}" ]]; then
+    elif [[ "${MINOR_VER}" == "${LATEST_VER}" ]]; then
       make release TAG="latest"
     fi
   fi
+
+notifications:
+  on_failure: never
+  slack:
+    secure: "BU1KmBt1xgJnV07rj+cuxyyD0sn4n/X9lxmbhFKKX2eML5DKzo+REZzpU3XHFK+ykPB01bfkVrlI7vnXiwHGE7divqoiIemGTp7P5cgkyRmxhxTjUl0KeJnoeZmZXOKeLXQGg6Wk8GuT6sI8mSNHkaq1IHRzhdg83Y7fqOd3vdhjBxAw5TB0tcv10VRe2LExoV2/En6p6+bqjuXAnTCRD8+qSVclbp1RCtQxb+kpyPS2DtXTDX9Jd0XeR2nDzmj0krCEUQdnXgmTIToI0qge5FPAJq/3sfvSTQOhO24VFDc3ZCxI+QF+q/KpEf689ETcfidHeIiOVh32hqCSSFKl6VK8/fZt9P9SpP96HP2lvfyL9667kU84D4djzpdNdvst+I01hZRBYwdGLTVczVgmMsl04F4Tj/RDrDuUUjZobeb9atImiMzGCD6638RhJlO4NJubRJSF/7RBQUfZZ5riS3QIEB27uvQOyAmuhSsg+3Pur18FuGhImCSQGcyyw2xwLJogHRG9M5mc4EyN6vuGDXOraYz5SEd6OZbz/W8pVKPSyifisI6qpc0BZIbg/MC2BkdUFGUVOTSmkHPlOjkCKKgmhJk/LitkTucYTAmHmGPZRJnwRrvNdXHtgOGxWJFvLWxGVQZEC4dLGhnYwa4sG0W956HfivLuv3JFR3rBRNk="
