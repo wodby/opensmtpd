@@ -18,7 +18,7 @@ EXPOSE 25
 
 COPY smtpd.conf.tpl /etc/gotpl/
 COPY docker-entrypoint.sh /
-COPY actions /usr/local/bin/
+COPY actions.mk /usr/local/bin/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
