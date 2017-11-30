@@ -12,11 +12,11 @@
 * [Travis CI builds](https://travis-ci.org/wodby/opensmtpd) 
 * [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd)
 
-For better reliability we release images with stability tags (`wodby/opensmtpd:6.0.2-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. Below listed basic tags:
-
 Supported tags and respective `Dockerfile` links:
 
-* `6`, `6.0`, `6.0.2`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+* `6`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+
+For better reliability we additionally release images with stability tags (`wodby/opensmtpd:6.0-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. 
 
 ## Environment Variables
 
