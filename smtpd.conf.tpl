@@ -1,6 +1,6 @@
 listen on 0.0.0.0
 
-table aliases db:/etc/smtpd/aliases.db
+table aliases file:/etc/smtpd/aliases
 
 # Specify how long a message can stay in the queue. The default value is 4 days.
 expire {{ getenv "OPENSMTPD_EXPIRE" "4d" }}
