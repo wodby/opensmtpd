@@ -1,9 +1,9 @@
 # OpenSMTPD Docker Container Image
 
 [![Build Status](https://travis-ci.org/wodby/opensmtpd.svg?branch=master)](https://travis-ci.org/wodby/opensmptd)
-[![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmtpd-alpine.svg)](https://hub.docker.com/r/wodby/opensmtpd-alpine)
-[![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd-alpine.svg)](https://hub.docker.com/r/wodby/opensmtpd-alpine)
-[![Wodby Slack](http://slack.wodby.com/badge.svg)](http://slack.wodby.com)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
+[![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
+[![Docker Layers](https://images.microbadger.com/badges/image/wodby/opensmtpd.svg)](https://microbadger.com/images/wodby/opensmtpd)
 
 ## Docker Images
 
@@ -22,17 +22,17 @@ Supported tags and respective `Dockerfile` links:
 
 ## Environment Variables
 
-| Variable                   | Default Value | Description |
-| -------------------------- | ------------- | ----------- |
-| `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`    |             |
-| `OPENSMTPD_EXPIRE`           | `4d`            |             |
-| `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`           |             |
+| Variable                     | Default Value | Description |
+| ---------------------------- | ------------- | ----------- |
+| `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`  |             |
+| `OPENSMTPD_EXPIRE`           | `4d`          |             |
+| `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`         |             |
 | `RELAY_HOST`                 |               |             |
 | `RELAY_USER`                 |               |             |
 | `RELAY_PASSWORD`             |               |             |
-| `RELAY_PORT`                 | `587`           |             |
+| `RELAY_PORT`                 | `587`         |             |
 
-## Actions
+## Orchestration actions
 
 Usage:
 ```
