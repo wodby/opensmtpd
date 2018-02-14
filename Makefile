@@ -1,15 +1,17 @@
 -include env.mk
 
 OPENSMTPD_VER = 6.0.2
-TAG ?= $(OPENSMTPD_VER)
+OPENSMTPD_MINOR_VER ?= $(shell echo "${OPENSMTPD_VER}" | grep -oE '^[0-9]+\.[0-9]+')
+
+TAG ?= $(OPENSMTPD_MINOR_VER)
 
 REPO = wodby/opensmtpd
-NAME = opensmtpd-$(OPENSMTPD_VER)
+NAME = opensmtpd-$(OPENSMTPD_MINOR_VER)
 
 ifneq ($(STABILITY_TAG),)
-ifneq ($(TAG),latest)
-    override TAG := $(TAG)-$(STABILITY_TAG)
-endif
+    ifneq ($(TAG),latest)
+        override TAG := $(TAG)-$(STABILITY_TAG)
+    endif
 endif
 
 .PHONY: build test push shell run start stop logs clean release

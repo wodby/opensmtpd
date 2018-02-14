@@ -7,6 +7,10 @@
 
 ## Docker Images
 
+!!! For better reliability we release images with stability tags (`wodby/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We **STRONGLY RECOMMEND** using images only with stability tags. 
+
+Overview:
+
 * All images are based on Alpine Linux
 * Base image: [wodby/alpine](https://github.com/wodby/alpine)
 * [Travis CI builds](https://travis-ci.org/wodby/opensmtpd) 
@@ -14,21 +18,19 @@
 
 Supported tags and respective `Dockerfile` links:
 
-* `6`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
-
-For better reliability we additionally release images with stability tags (`wodby/opensmtpd:6.0-X.X.X`) which correspond to git tags. We **strongly recommend** using images only with stability tags. 
+* `6`, `6.0`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 ## Environment Variables
 
 | Variable                   | Default Value | Description |
 | -------------------------- | ------------- | ----------- |
-| OPENSMTPD_BOUNCE_WARN      | 1h, 6h, 2d    |             |
-| OPENSMTPD_EXPIRE           | 4d            |             |
-| OPENSMTPD_MAX_MESSAGE_SIZE | 35M           |             |
-| RELAY_HOST                 |               |             |
-| RELAY_USER                 |               |             |
-| RELAY_PASSWORD             |               |             |
-| RELAY_PORT                 | 587           |             |
+| `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`    |             |
+| `OPENSMTPD_EXPIRE`           | `4d`            |             |
+| `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`           |             |
+| `RELAY_HOST`                 |               |             |
+| `RELAY_USER`                 |               |             |
+| `RELAY_PASSWORD`             |               |             |
+| `RELAY_PORT`                 | `587`           |             |
 
 ## Actions
 

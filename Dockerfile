@@ -1,14 +1,15 @@
-FROM wodby/alpine:3.6-1.0.0
+FROM wodby/alpine:3.7-1.2.0
 
 ARG OPENSMTPD_VER
 
-ENV OPENSMTPD_VER_ALPINE="${OPENSMTPD_VER}p1-r2"
+ENV OPENSMTPD_VER="${OPENSMTPD_VER}" \
+    OPENSMTPD_VER_ALPINE="${OPENSMTPD_VER}p1-r7"
 
-RUN apk add --no-cache \
+RUN apk add --no-cache -t opensmtpd-rundeps \
         libressl \
         make \
-        opensmtpd=${OPENSMTPD_VER_ALPINE} && \
-
+        "opensmtpd=${OPENSMTPD_VER_ALPINE}"; \
+    \
     mkdir -p /var/spool/smtpd
 
 VOLUME /var/spool/smtpd
