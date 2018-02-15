@@ -4,7 +4,7 @@ host ?= localhost
 max_try ?= 1
 wait_seconds ?= 1
 delay_seconds ?= 0
-command = nc -z ${host} 25
+command = echo 'HELO example.com' | nc ${host} 25 | grep -q 'pleased to meet you'
 service = OpenSMPTD
 
 default: check-ready
