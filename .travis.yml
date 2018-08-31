@@ -4,19 +4,11 @@ services:
   - docker
 
 env:
-  global:
-    - LATEST_TAG=6.0
   matrix:
-    - OPENSMTPD_VER=6.0.2 TAG=6.0 EXTRA_TAG=6
+    - OPENSMTPD_ALPINE_VER=6.0.3 TAGS=6.0,6,latest
 
 script:
   - make && make test
 
 after_success:
-  - bash "${TRAVIS_BUILD_DIR}/travis-release.sh"
-
-notifications:
-  on_failure: never
-  slack:
-    secure: |
-      BU1KmBt1xgJnV07rj+cuxyyD0sn4n/X9lxmbhFKKX2eML5DKzo+REZzpU3XHFK+ykPB01bfkVrlI7vnXiwHGE7divqoiIemGTp7P5cgkyRmxhxTjUl0KeJnoeZmZXOKeLXQGg6Wk8GuT6sI8mSNHkaq1IHRzhdg83Y7fqOd3vdhjBxAw5TB0tcv10VRe2LExoV2/En6p6+bqjuXAnTCRD8+qSVclbp1RCtQxb+kpyPS2DtXTDX9Jd0XeR2nDzmj0krCEUQdnXgmTIToI0qge5FPAJq/3sfvSTQOhO24VFDc3ZCxI+QF+q/KpEf689ETcfidHeIiOVh32hqCSSFKl6VK8/fZt9P9SpP96HP2lvfyL9667kU84D4djzpdNdvst+I01hZRBYwdGLTVczVgmMsl04F4Tj/RDrDuUUjZobeb9atImiMzGCD6638RhJlO4NJubRJSF/7RBQUfZZ5riS3QIEB27uvQOyAmuhSsg+3Pur18FuGhImCSQGcyyw2xwLJogHRG9M5mc4EyN6vuGDXOraYz5SEd6OZbz/W8pVKPSyifisI6qpc0BZIbg/MC2BkdUFGUVOTSmkHPlOjkCKKgmhJk/LitkTucYTAmHmGPZRJnwRrvNdXHtgOGxWJFvLWxGVQZEC4dLGhnYwa4sG0W956HfivLuv3JFR3rBRNk=
+  - . "${TRAVIS_BUILD_DIR}/release.sh"

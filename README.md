@@ -5,9 +5,9 @@
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
 [![Docker Layers](https://images.microbadger.com/badges/image/wodby/opensmtpd.svg)](https://microbadger.com/images/wodby/opensmtpd)
 
-## Docker Images
+## Docker images
 
-!!! For better reliability we release images with stability tags (`wodby/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We **STRONGLY RECOMMEND** using images only with stability tags. 
+❗️For better reliability we release images with stability tags (`wodby/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We strongly recommend using images only with stability tags. 
 
 Overview:
 
@@ -20,7 +20,7 @@ Supported tags and respective `Dockerfile` links:
 
 * `6`, `6.0`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
-## Environment Variables
+## Environment variables
 
 | Variable                     | Default Value | Description |
 | ---------------------------- | ------------- | ----------- |
@@ -50,4 +50,4 @@ default params values:
 
 ## Deployment
 
-Deploy OpenSMTPD to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com).
+Deploy OpenSMTPD to your own server via [![Wodby](https://www.google.com/s2/favicons?domain=wodby.com) Wodby](https://wodby.com/stacks/opensmtpd).

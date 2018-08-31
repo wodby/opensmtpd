@@ -1,14 +1,13 @@
-FROM wodby/alpine:3.7-1.2.0
+FROM wodby/alpine:3.8-2.1.0
 
 ARG OPENSMTPD_VER
 
-ENV OPENSMTPD_VER="${OPENSMTPD_VER}" \
-    OPENSMTPD_VER_ALPINE="${OPENSMTPD_VER}p1-r7"
+ENV OPENSMTPD_VER="${OPENSMTPD_VER}"
 
 RUN apk add --no-cache -t opensmtpd-rundeps \
         libressl \
         make \
-        "opensmtpd=${OPENSMTPD_VER_ALPINE}"; \
+        "opensmtpd~${OPENSMTPD_VER}"; \
     \
     mkdir -p /var/spool/smtpd
 
@@ -17,9 +16,9 @@ WORKDIR /var/spool/smtpd
 
 EXPOSE 25
 
-COPY smtpd.conf.tpl /etc/gotpl/
+COPY templates /etc/gotpl/
 COPY docker-entrypoint.sh /
-COPY actions.mk /usr/local/bin/
+COPY bin/ /usr/local/bin/
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 

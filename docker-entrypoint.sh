@@ -8,7 +8,7 @@ fi
 
 chmod 711 /var/spool/smtpd
 
-gotpl "/etc/gotpl/smtpd.conf.tpl" > "/etc/smtpd/smtpd.conf"
+gotpl /etc/gotpl/smtpd.conf.tmpl > /etc/smtpd/smtpd.conf
 
 if [[ -n "${RELAY_USER}" ]]; then
     if [[ -n "${RELAY_PASSWORD}" ]]; then

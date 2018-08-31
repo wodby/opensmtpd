@@ -1,12 +1,12 @@
 -include env.mk
 
-OPENSMTPD_VER = 6.0.2
-OPENSMTPD_MINOR_VER ?= $(shell echo "${OPENSMTPD_VER}" | grep -oE '^[0-9]+\.[0-9]+')
+OPENSMTPD_VER = 6.0.3
+OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
-TAG ?= $(OPENSMTPD_MINOR_VER)
+TAG ?= $(OPENSMTPD_VER_MINOR)
 
 REPO = wodby/opensmtpd
-NAME = opensmtpd-$(OPENSMTPD_MINOR_VER)
+NAME = opensmtpd-$(OPENSMTPD_VER_MINOR)
 
 ifneq ($(STABILITY_TAG),)
     ifneq ($(TAG),latest)
@@ -22,7 +22,7 @@ build:
 	docker build -t $(REPO):$(TAG) --build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
 test:
-	./test.sh $(NAME) $(REPO):$(TAG)
+	cd ./tests && ./run.sh $(NAME) $(REPO):$(TAG)
 
 push:
 	docker push $(REPO):$(TAG)
