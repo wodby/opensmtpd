@@ -1,9 +1,17 @@
 -include env.mk
 
-OPENSMTPD_VER = 6.0.3
+OPENSMTPD_VER ?= 6.0.3
 OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
 TAG ?= $(OPENSMTPD_VER_MINOR)
+
+ALPINE_VER ?= 3.9
+
+ifeq ($(BASE_IMAGE_STABILITY_TAG),)
+    BASE_IMAGE_TAG := $(ALPINE_VER)
+else
+    BASE_IMAGE_TAG := $(ALPINE_VER)-$(BASE_IMAGE_STABILITY_TAG)
+endif
 
 REPO = wodby/opensmtpd
 NAME = opensmtpd-$(OPENSMTPD_VER_MINOR)
@@ -19,7 +27,9 @@ endif
 default: build
 
 build:
-	docker build -t $(REPO):$(TAG) --build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
+	docker build -t $(REPO):$(TAG) \
+		--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) \
+		--build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
 test:
 	cd ./tests && ./run.sh $(NAME) $(REPO):$(TAG)

@@ -1,13 +1,15 @@
 language: bash
 
 services:
-  - docker
+- docker
 
 env:
-  - OPENSMTPD_ALPINE_VER=6.0.3 TAGS=6.0,6,latest
+- BASE_IMAGE_STABILITY_TAG=2.2.2
+- ALPINE_VER=3.9
+- OPENSMTPD_VER=6.0.3 TAGS=6.0,6,latest
 
 script:
-  - make && make test
+- make && make test
 
 after_success:
-  - . "${TRAVIS_BUILD_DIR}/release.sh"
+- . "${TRAVIS_BUILD_DIR}/release.sh"
