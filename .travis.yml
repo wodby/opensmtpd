@@ -4,7 +4,7 @@ services:
 - docker
 
 env:
-- BASE_IMAGE_STABILITY_TAG=2.3.0
+- BASE_IMAGE_STABILITY_TAG=2.3.1
 - ALPINE_VER=3.9
 - OPENSMTPD_VER=6.0.3 TAGS=6.0,6,latest
 
