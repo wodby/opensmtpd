@@ -4,9 +4,10 @@ services:
 - docker
 
 env:
-- BASE_IMAGE_STABILITY_TAG=2.4.1
-- ALPINE_VER=3.10
-- OPENSMTPD_VER=6.0.3 TAGS=6.0,6,latest
+  global:
+  - BASE_IMAGE_STABILITY_TAG=2.4.1
+  - ALPINE_VER=3.10
+  - OPENSMTPD_VER=6.0.3 TAGS=6.0,6,latest
 
 script:
 - make && make test
