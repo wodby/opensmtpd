@@ -19,7 +19,7 @@ jobs:
     - uses: ./.github/actions
       with:
         version: 6.0.3
-        alpine_ver: 3.10
+        alpine_ver: '3.10'
         tags: 6.0,6,latest
         base_image_stability_tag: ${{ env.BASE_IMAGE_STABILITY_TAG }}
         username: ${{ secrets.DOCKER_USERNAME }}
