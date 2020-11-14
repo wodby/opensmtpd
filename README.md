@@ -1,6 +1,6 @@
 # OpenSMTPD Docker Container Image
 
-[![Build Status](https://travis-ci.org/wodby/opensmtpd.svg?branch=master)](https://travis-ci.org/wodby/opensmptd)
+[![Build Status](https://github.com/wodby/opensmtpd/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/opensmtpd/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
 [![Docker Layers](https://images.microbadger.com/badges/image/wodby/opensmtpd.svg)](https://microbadger.com/images/wodby/opensmtpd)
@@ -11,14 +11,14 @@
 
 Overview:
 
-* All images are based on Alpine Linux
-* Base image: [wodby/alpine](https://github.com/wodby/alpine)
-* [Travis CI builds](https://travis-ci.org/wodby/opensmtpd) 
-* [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd)
+- All images based on Alpine Linux
+- Base image: [wodby/alpine](https://github.com/wodby/alpine)
+- [GitHub actions builds](https://github.com/wodby/opensmtpd/actions) 
+- [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd)
 
 Supported tags and respective `Dockerfile` links:
 
-* `6`, `6.0`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `6`, `6.0`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 ## Environment variables
 
