@@ -3,7 +3,6 @@
 [![Build Status](https://github.com/wodby/opensmtpd/workflows/Build%20docker%20image/badge.svg)](https://github.com/wodby/opensmtpd/actions)
 [![Docker Pulls](https://img.shields.io/docker/pulls/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
 [![Docker Stars](https://img.shields.io/docker/stars/wodby/opensmtpd.svg)](https://hub.docker.com/r/wodby/opensmtpd)
-[![Docker Layers](https://images.microbadger.com/badges/image/wodby/opensmtpd.svg)](https://microbadger.com/images/wodby/opensmtpd)
 
 ## Docker images
 
@@ -18,12 +17,12 @@ Overview:
 
 Supported tags and respective `Dockerfile` links:
 
-- `6`, `6.0`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `6`, `6.7`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 ## Environment variables
 
 | Variable                     | Default Value | Description |
-| ---------------------------- | ------------- | ----------- |
+|------------------------------|---------------|-------------|
 | `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`  |             |
 | `OPENSMTPD_EXPIRE`           | `4d`          |             |
 | `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`         |             |

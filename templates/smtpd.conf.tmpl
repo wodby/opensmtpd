@@ -2,19 +2,22 @@ listen on 0.0.0.0
 
 table aliases file:/etc/smtpd/aliases
 
-expire {{ getenv "OPENSMTPD_EXPIRE" "4d" }}
+queue ttl {{ getenv "OPENSMTPD_EXPIRE" "4d" }}
 
-bounce-warn {{ getenv "OPENSMTPD_BOUNCE_WARN" "1h, 6h, 2d" }}
+bounce warn-interval {{ getenv "OPENSMTPD_BOUNCE_WARN" "1h, 6h, 2d" }}
 
-max-message-size {{ getenv "OPENSMTPD_MAX_MESSAGE_SIZE" "35M" }}
+smtp max-message-size {{ getenv "OPENSMTPD_MAX_MESSAGE_SIZE" "35M" }}
 
 {{ if getenv "RELAY_HOST" }}
 {{ if getenv "RELAY_USER" }}
 table authinfo db:/etc/smtpd/authinfo.db
-accept from any for any relay via "tls+auth://user@{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}" auth <authinfo>
+action act01 relay host "tls+auth://user@{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
+match for any action act01
 {{ else }}
-accept from any for any relay via "tls://{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
+action act01 relay host "tls://{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
+match for any action act01
 {{ end }}
 {{ else }}
-accept from any for any relay
+action act01 relay
+match for any action act01
 {{ end }}
