@@ -18,6 +18,7 @@ Overview:
 Supported tags and respective `Dockerfile` links:
 
 - `6`, `6.7`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `6-alpine3.13`, `6.7-alpine3.13`, `alpine3.13` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 ## Environment variables
 
