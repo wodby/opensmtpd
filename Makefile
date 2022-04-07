@@ -1,6 +1,6 @@
 -include env.mk
 
-OPENSMTPD_VER ?= 6.7.1
+OPENSMTPD_VER ?= 6.8.0
 OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
 TAG ?= $(OPENSMTPD_VER_MINOR)

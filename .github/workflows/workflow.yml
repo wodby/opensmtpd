@@ -12,7 +12,6 @@ env:
   BASE_IMAGE_STABILITY_TAG: 2.10.6
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
   DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-  OPENSMTPD6: '6.7.1'
 
 jobs:
   opensmtpd-6:
@@ -21,15 +20,15 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./.github/actions
       with:
-        version: ${{ env.OPENSMTPD6 }}
+        version: '6.8.0'
         alpine_ver: '3.15'
-        tags: 6.7,6,latest
+        tags: 6.8,6,latest
   opensmtpd-6-alpine313:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
     - uses: ./.github/actions
       with:
-        version: ${{ env.OPENSMTPD6 }}
+        version: '6.7.1'
         alpine_ver: '3.13'
         tags: 6.7-alpine3.13,6-alpine3.13,alpine3.13
