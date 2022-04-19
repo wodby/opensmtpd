@@ -4,9 +4,6 @@ inputs:
   version:
     description: version
     required: true
-  alpine_ver:
-    description: alpine version
-    required: true
   tags:
     description: image tags
     required: true
@@ -16,7 +13,6 @@ runs:
   - name: Build image
     env:
       OPENSMTPD_VER: ${{ inputs.version }}
-      ALPINE_VER: ${{ inputs.alpine_ver }}
       TAGS: ${{ inputs.tags }}
     run: |
       set -e
