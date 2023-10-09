@@ -27,7 +27,7 @@ Supported tags and respective `Dockerfile` links:
 | `OPENSMTPD_EXPIRE`           | `4d`          |             |
 | `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`         |             |
 | `RELAY_HOST`                 |               |             |
-| `RELAY_SCHEME`               | `smtp+tls`    |             |
+| `RELAY_PROTO`               | `smtp+tls`    |             |
 | `RELAY_USER`                 |               |             |
 | `RELAY_PASSWORD`             |               |             |
 | `RELAY_PORT`                 | `587`         |             |
