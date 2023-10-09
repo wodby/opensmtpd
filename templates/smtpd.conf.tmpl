@@ -12,10 +12,10 @@ smtp max-message-size {{ getenv "OPENSMTPD_MAX_MESSAGE_SIZE" "35M" }}
 {{ if getenv "RELAY_HOST" }}
 {{ if getenv "RELAY_USER" }}
 table authinfo db:/etc/smtpd/authinfo.db
-action default relay host "smtp+tls://user@{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}" auth <authinfo>
+action default relay host "{{ getenv "RELAY_SCHEME" "smtp+tls" }}://user@{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}" auth <authinfo>
 match from any for any action default
 {{ else }}
-action default relay host "smtp+tls://{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
+action default relay host "{{ getenv "RELAY_SCHEME" "smtp+tls" }}://{{ getenv "RELAY_HOST" }}:{{ getenv "RELAY_PORT" "587" }}"
 match from any for any action default
 {{ end }}
 {{ else }}
