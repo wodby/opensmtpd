@@ -1,11 +1,11 @@
 -include env.mk
 
-OPENSMTPD_VER ?= 6.8.0
+OPENSMTPD_VER ?= 7.5.0
 OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
 TAG ?= $(OPENSMTPD_VER_MINOR)
 
-ALPINE_VER ?= 3.18
+ALPINE_VER ?= 3.20
 
 ifeq ($(BASE_IMAGE_STABILITY_TAG),)
     BASE_IMAGE_TAG := $(ALPINE_VER)

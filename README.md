@@ -6,7 +6,7 @@
 
 ## Docker images
 
-❗️For better reliability we release images with stability tags (`wodby/opensmtpd:6-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We strongly recommend using images only with stability tags. 
+❗️For better reliability we release images with stability tags (`wodby/opensmtpd:7-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We strongly recommend using images only with stability tags. 
 
 Overview:
 
@@ -17,7 +17,7 @@ Overview:
 
 Supported tags and respective `Dockerfile` links:
 
-- `6`, `6.8`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `7`, `7.5`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 ## Environment variables
 
