@@ -42,14 +42,14 @@ This is typically used to deploy the authentication password using
 If you store the password in `docker secret`, e.g.
 
 ```
-$ echo 'my secret' | docker secreat create smtp_relay_password -
+$ echo 'my secret' | docker secret create smtp_relay_password -
 ```
 
 then you can use it setting the `RELAY_PASSWORD_FILE` environment
 variable in your container like:
 
 ```
-RELAY_PASSWORD_FILE=/run/secrets/smtp_relay_password`
+RELAY_PASSWORD_FILE=/run/secrets/smtp_relay_password
 ```
 
 Note that you cannot specify both the `XXX` and `XXX_FILE` environment
