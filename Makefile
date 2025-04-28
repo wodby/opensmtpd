@@ -31,6 +31,12 @@ build:
 		--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) \
 		--build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
+buildx-imagetools-create:
+	docker buildx imagetools create -t $(REPO):$(TAG) \
+				$(REPO):$(TAG)-amd64 \
+				$(REPO):$(TAG)-arm64
+.PHONY: buildx-imagetools-create
+
 test:
 	cd ./tests && ./run.sh $(NAME) $(REPO):$(TAG)
 
