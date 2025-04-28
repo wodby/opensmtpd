@@ -33,8 +33,8 @@ build:
 
 buildx-imagetools-create:
 	docker buildx imagetools create -t $(REPO):$(TAG) \
-				$(REPO):$(TAG)-amd64 \
-				$(REPO):$(TAG)-arm64
+				$(REPO):$(OPENSMTPD_VER_MINOR)-amd64 \
+				$(REPO):$(OPENSMTPD_VER_MINOR)-arm64
 .PHONY: buildx-imagetools-create
 
 test:
