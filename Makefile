@@ -1,11 +1,13 @@
 -include env.mk
 
-OPENSMTPD_VER ?= 7.5.0
+OPENSMTPD_VER ?= 7.6.0
 OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
 TAG ?= $(OPENSMTPD_VER_MINOR)
 
-ALPINE_VER ?= 3.20
+ALPINE_VER ?= 3.21
+
+PLATFORM ?= linux/arm64
 
 ifeq ($(BASE_IMAGE_STABILITY_TAG),)
     BASE_IMAGE_TAG := $(ALPINE_VER)
@@ -16,10 +18,8 @@ endif
 REPO = wodby/opensmtpd
 NAME = opensmtpd-$(OPENSMTPD_VER_MINOR)
 
-ifneq ($(STABILITY_TAG),)
-    ifneq ($(TAG),latest)
-        override TAG := $(TAG)-$(STABILITY_TAG)
-    endif
+ifneq ($(ARCH),)
+	override TAG := $(TAG)-$(ARCH)
 endif
 
 .PHONY: build test push shell run start stop logs clean release

@@ -17,22 +17,24 @@ Overview:
 
 Supported tags and respective `Dockerfile` links:
 
-- `7`, `7.5`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `7`, `7.6`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+
+All images built for `linux/amd64` and `linux/arm64`
 
 ## Environment variables
 
-| Variable                     | Default Value | Description |
-|------------------------------|---------------|-------------|
-| `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`  |             |
-| `OPENSMTPD_EXPIRE`           | `4d`          |             |
-| `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`         |             |
-| `RELAY_HOST`                 |               |             |
-| `RELAY_PROTO`                | `smtp+tls`    |             |
-| `RELAY_USER`                 |               |             |
-| `RELAY_USER_FILE`            |               | A file where the user can be found |
-| `RELAY_PASSWORD`             |               |             |
+| Variable                     | Default Value | Description                            |
+|------------------------------|---------------|----------------------------------------|
+| `OPENSMTPD_BOUNCE_WARN`      | `1h, 6h, 2d`  |                                        |
+| `OPENSMTPD_EXPIRE`           | `4d`          |                                        |
+| `OPENSMTPD_MAX_MESSAGE_SIZE` | `35M`         |                                        |
+| `RELAY_HOST`                 |               |                                        |
+| `RELAY_PROTO`                | `smtp+tls`    |                                        |
+| `RELAY_USER`                 |               |                                        |
+| `RELAY_USER_FILE`            |               | A file where the user can be found     |
+| `RELAY_PASSWORD`             |               |                                        |
 | `RELAY_PASSWORD_FILE`        |               | A file where the password can be found |
-| `RELAY_PORT`                 | `587`         |             |
+| `RELAY_PORT`                 | `587`         |                                        |
 
 The XXX_FILE environment variables allow to put the authentication
 credentials in files rather than environment variables directly.
