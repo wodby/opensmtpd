@@ -10,14 +10,14 @@
 
 Overview:
 
-- All images based on Alpine Linux
+- All images are based on Alpine Linux
 - Base image: [wodby/alpine](https://github.com/wodby/alpine)
 - [GitHub actions builds](https://github.com/wodby/opensmtpd/actions) 
 - [Docker Hub](https://hub.docker.com/r/wodby/opensmtpd)
 
 Supported tags and respective `Dockerfile` links:
 
-- `7`, `7.6`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
+- `7`, `7.8`, `latest` [_(Dockerfile)_](https://github.com/wodby/opensmtpd/tree/master/Dockerfile)
 
 All images built for `linux/amd64` and `linux/arm64`
 

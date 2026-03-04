@@ -10,7 +10,7 @@ on:
 
 env:
   BASE_IMAGE_STABILITY_TAG: 2.19.4
-  OPENSMTPD7: '7.6.0'
+  OPENSMTPD7: '7.8.0'
 
 jobs:
   opensmtpd-build:

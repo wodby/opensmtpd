@@ -1,11 +1,11 @@
 -include env.mk
 
-OPENSMTPD_VER ?= 7.6.0
+OPENSMTPD_VER ?= 7.8.0
 OPENSMTPD_VER_MINOR := $(shell v='$(OPENSMTPD_VER)'; echo "$${v%.*}")
 
 TAG ?= $(OPENSMTPD_VER_MINOR)
 
-ALPINE_VER ?= 3.21
+ALPINE_VER ?= 3.23
 
 PLATFORM ?= linux/arm64
 
