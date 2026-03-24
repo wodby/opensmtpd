@@ -1,5 +1,5 @@
-listen on 0.0.0.0
-listen on ::
+listen on {{ getenv "OPENSMTPD_BIND_ADDR4" "0.0.0.0" }}
+listen on {{ getenv "OPENSMTPD_BIND_ADDR6" "::" }}
 
 table aliases file:/etc/smtpd/aliases
 
