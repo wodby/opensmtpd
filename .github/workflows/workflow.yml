@@ -9,7 +9,7 @@ on:
     - '*'
 
 env:
-  BASE_IMAGE_STABILITY_TAG: 2.19.5
+  BASE_IMAGE_STABILITY_TAG: 2.19.6
   OPENSMTPD7: '7.8.0'
 
 jobs:
