@@ -6,7 +6,10 @@ ARG OPENSMTPD_VER
 
 ENV OPENSMTPD_VER="${OPENSMTPD_VER}"
 
-RUN apk add --no-cache -t opensmtpd-rundeps \
+# Upgrade inherited packages even when their existing versions satisfy dependencies.
+RUN set -ex; \
+    apk upgrade --no-cache; \
+    apk add --no-cache -t opensmtpd-rundeps \
         libressl \
         make \
         "opensmtpd~${OPENSMTPD_VER}"; \
