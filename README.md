@@ -6,7 +6,10 @@
 
 ## Docker images
 
-❗️For better reliability we release images with stability tags (`wodby/opensmtpd:7-X.X.X`) which correspond to [git tags](https://github.com/wodby/opensmtpd/releases). We strongly recommend using images only with stability tags. 
+Use image revision tags such as `wodby/opensmtpd:7-rN` to select a Wodby image revision.
+The `rN` suffix identifies the image revision separately from the upstream software version.
+See [release tags](https://github.com/wodby/opensmtpd/tags) for available revisions and the [image revision policy](https://github.com/wodby/images#image-revisions) for upgrade guidance.
+Existing SemVer image tags remain available.
 
 Overview:
 
