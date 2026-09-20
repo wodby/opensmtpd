@@ -24,11 +24,13 @@ endif
 
 .PHONY: build test push shell run start stop logs clean release
 
+# Resolve the same pinned base image for every local and CI build target.
+include base-images.mk
+
 default: build
 
 build:
-	docker build -t $(REPO):$(TAG) \
-		--build-arg BASE_IMAGE_TAG=$(BASE_IMAGE_TAG) \
+	docker build --build-arg BASE_IMAGE="$(BASE_IMAGE)" -t $(REPO):$(TAG) \
 		--build-arg OPENSMTPD_VER=$(OPENSMTPD_VER) ./
 
 buildx-imagetools-create:
