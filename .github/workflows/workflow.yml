@@ -11,7 +11,7 @@ on:
     - '!*-r[0-9]*'
 
 env:
-  BASE_IMAGE_REVISION: r0
+  BASE_IMAGE_REVISION: r1
   OPENSMTPD7: '7.8.0'
 
 jobs:
