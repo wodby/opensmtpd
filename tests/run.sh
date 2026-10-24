@@ -9,6 +9,12 @@ fi
 name=$1
 image=$2
 
+# The image revision must contain the exact package selected for this release.
+package_pin="$(cat "$(dirname "$0")/../.opensmtpd-package")"
+echo -n "Checking OpenSMTPD package revision... "
+docker run --rm --entrypoint=apk "${image}" info -v | grep -xF "opensmtpd-${package_pin}" >/dev/null
+echo "OK"
+
 cid="$(docker run -d --name "${name}" "${image}")"
 trap "docker rm -vf $cid > /dev/null" EXIT
 
