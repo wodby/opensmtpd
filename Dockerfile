@@ -9,6 +9,9 @@ ARG OPENSMTPD_VER
 
 ENV OPENSMTPD_VER="${OPENSMTPD_VER}"
 
+# Refresh inherited security fixes when rebuilding this image.
+RUN apk upgrade --no-cache
+
 RUN apk add --no-cache -t opensmtpd-rundeps \
         libressl \
         make \
