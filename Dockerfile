@@ -9,11 +9,20 @@ ARG OPENSMTPD_VER
 
 ENV OPENSMTPD_VER="${OPENSMTPD_VER}"
 
-RUN apk add --no-cache -t opensmtpd-rundeps \
+# Keep rebuilds on the package revision selected for both architectures.
+COPY .opensmtpd-package /tmp/.opensmtpd-package
+
+RUN set -eux; \
+    package_version="$(cat /tmp/.opensmtpd-package)"; \
+    upstream_version="${package_version%-r*}"; \
+    upstream_version="${upstream_version%_p*}"; \
+    test "${upstream_version}" = "${OPENSMTPD_VER}"; \
+    apk add --no-cache -t opensmtpd-rundeps \
         libressl \
         make \
-        "opensmtpd~${OPENSMTPD_VER}"; \
+        "opensmtpd=${package_version}"; \
     \
+    rm /tmp/.opensmtpd-package; \
     mkdir -p /var/spool/smtpd
 
 VOLUME /var/spool/smtpd

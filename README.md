@@ -27,6 +27,11 @@ Supported tags and respective `Dockerfile` links:
 
 All images built for `linux/amd64` and `linux/arm64`
 
+OpenSMTPD is installed at the exact Alpine package revision in `.opensmtpd-package`.
+Automatic updates follow OpenSMTPD 7 packages available for both architectures
+on Alpine 3.23, including packaging and portable patch revisions. New major
+versions and Alpine branch changes require review.
+
 ## Environment variables
 
 | Variable                     | Default Value | Description                            |
